@@ -2,7 +2,7 @@ import { ExtensionContext, Memento } from 'vscode';
 import { log } from './logger';
 
 class GlobalState {
-  private readonly KEY = 'compareFolders.paths';
+  private readonly KEY = 'vscodeCompare.paths';
   private globalState?: Memento;
 
   init(context: ExtensionContext) {

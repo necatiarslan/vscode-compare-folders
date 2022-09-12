@@ -93,7 +93,7 @@ export class CompareFoldersProvider implements TreeDataProvider<File> {
     this._diffs = diffs;
     await this.updateUI();
     this.warnUnaccessiblePaths()
-    commands.executeCommand('foldersCompareAppService.focus');
+    commands.executeCommand('vscodeCompareAppService.focus');
     setContext(HAS_FOLDERS, true);
   }
 

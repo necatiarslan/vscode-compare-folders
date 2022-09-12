@@ -15,10 +15,10 @@ export async function activate(context: ExtensionContext) {
   const identicals = new ViewOnlyProvider(false);
   const foldersCompareProvider = new CompareFoldersProvider(onlyInA, onlyInB, identicals);
   context.subscriptions.push(
-      window.registerTreeDataProvider('foldersCompareAppService', foldersCompareProvider),
-      window.registerTreeDataProvider('foldersCompareAppServiceOnlyA', onlyInA),
-      window.registerTreeDataProvider('foldersCompareAppServiceOnlyB', onlyInB),
-      window.registerTreeDataProvider('foldersCompareAppServiceIdenticals', identicals),
+      window.registerTreeDataProvider('vscodeCompareAppService', foldersCompareProvider),
+      window.registerTreeDataProvider('vscodeCompareAppServiceOnlyA', onlyInA),
+      window.registerTreeDataProvider('vscodeCompareAppServiceOnlyB', onlyInB),
+      window.registerTreeDataProvider('vscodeCompareAppServiceIdenticals', identicals),
       commands.registerCommand(COMPARE_FILES, foldersCompareProvider.onFileClicked),
       commands.registerCommand(CHOOSE_FOLDERS_AND_COMPARE, foldersCompareProvider.chooseFoldersAndCompare),
       commands.registerCommand(COMPARE_FOLDERS_AGAINST_EACH_OTHER, foldersCompareProvider.compareFoldersAgainstEachOther),

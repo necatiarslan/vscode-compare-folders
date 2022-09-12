@@ -1,11 +1,11 @@
 {
-  "name": "compare-folders",
-  "displayName": "Compare Folders",
+  "name": "vscode-compare",
+  "displayName": "Vscode Compare",
   "description": "Compare folders by contents, present the files that have differences and display the diffs side by side",
-  "version": "0.22.3",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moshfeu/vscode-compare-folders"
+    "url": "https://github.com/necatiarslan/vscode-compare-folders"
   },
   "keywords": [
     "compare",
@@ -18,14 +18,14 @@
     "color": "#f5f5f5",
     "theme": "light"
   },
-  "publisher": "moshfeu",
+  "publisher": "NecatiARSLAN",
   "author": {
-    "name": "Mosh Feuchtwanger",
-    "email": "moshfeu.dev@gmail.com",
-    "url": "https://twitter.com/moshfeu"
+    "name": "Necati Arslan",
+    "email": "necatia@gmail.com",
+    "url": "https://twitter.com/necatiarslan"
   },
   "engines": {
-    "vscode": "^1.38.0"
+    "vscode": "^1.70.0"
   },
   "categories": [
     "Other"
@@ -39,71 +39,71 @@
       "type": "object",
       "title": "Compare Folders Configuration",
       "properties": {
-        "compareFolders.folderLeft": {
+        "vscodeCompare.folderLeft": {
           "type": "string",
           "description": "Default setting for left folder",
           "default": "",
           "scope": "resource"
         },
-        "compareFolders.folderRight": {
+        "vscodeCompare.folderRight": {
           "type": "string",
           "description": "Default setting for right folder",
           "default": "",
           "scope": "resource"
         },
-        "compareFolders.compareContent": {
+        "vscodeCompare.compareContent": {
           "type": "boolean",
           "default": true,
           "description": "Compare content",
           "scope": "resource"
         },
-        "compareFolders.ignoreLineEnding": {
+        "vscodeCompare.ignoreLineEnding": {
           "type": "boolean",
           "default": false,
           "description": "Ignore crlf/lf line ending differences",
           "scope": "resource"
         },
-        "compareFolders.ignoreWhiteSpaces": {
+        "vscodeCompare.ignoreWhiteSpaces": {
           "type": "boolean",
           "default": false,
           "description": "Ignore white spaces at the beginning and ending of a line (similar to 'diff -b')",
           "scope": "resource"
         },
-        "compareFolders.ignoreAllWhiteSpaces": {
+        "vscodeCompare.ignoreAllWhiteSpaces": {
           "type": "boolean",
           "default": false,
           "description": "Ignore all white space differences (similar to 'diff -w')",
           "scope": "resource"
         },
-        "compareFolders.ignoreEmptyLines": {
+        "vscodeCompare.ignoreEmptyLines": {
           "type": "boolean",
           "default": false,
           "description": "Ignore differences caused by empty lines (similar to 'diff -B')",
           "scope": "resource"
         },
-        "compareFolders.ignoreFileNameCase": {
+        "vscodeCompare.ignoreFileNameCase": {
           "type": "boolean",
           "default": true,
           "description": "If true fileName / FileName / FiLE naMe will consider as same file and will be compared",
           "scope": "resource"
         },
-        "compareFolders.ignoreExtension": {
+        "vscodeCompare.ignoreExtension": {
           "type": "array",
           "default": [],
           "description": "Pairs of extensions to to considered the same file (.e.g [index.js, index.ts]). Each extension can appear **only once**",
           "scope": "resource"
         },
-        "compareFolders.includeFilter": {
+        "vscodeCompare.includeFilter": {
           "type": "array",
           "description": "Include filters",
           "scope": "resource"
         },
-        "compareFolders.excludeFilter": {
+        "vscodeCompare.excludeFilter": {
           "type": "array",
           "description": "Exclude filters",
           "scope": "resource"
         },
-        "compareFolders.diffViewTitle": {
+        "vscodeCompare.diffViewTitle": {
           "type": "string",
           "default": "name only",
           "enum": [
@@ -119,7 +119,7 @@
           "markdownDescription": "Specifies how the diff view's title look like",
           "scope": "window"
         },
-        "compareFolders.diffLayout": {
+        "vscodeCompare.diffLayout": {
           "type": "string",
           "default": "local <> compared",
           "enum": [
@@ -133,19 +133,19 @@
           "markdownDescription": "Specifies which file will be in the left and the right sides of the diff view",
           "scope": "window"
         },
-        "compareFolders.showIdentical": {
+        "vscodeCompare.showIdentical": {
           "type": "boolean",
           "default": false,
           "description": "Show identical files",
           "scope": "resource"
         },
-        "compareFolders.useDiffMerge": {
+        "vscodeCompare.useDiffMerge": {
           "type": "boolean",
           "default": false,
           "description": "Use Diff & Merge extension as diff view",
           "scope": "window"
         },
-        "compareFolders.warnBeforeDelete": {
+        "vscodeCompare.warnBeforeDelete": {
           "type": "boolean",
           "default": "true",
           "description": "Show a warning message before deleting files",
@@ -156,88 +156,88 @@
     "menus": {
       "commandPalette": [
         {
-          "command": "foldersCompare.refresh",
+          "command": "vscodeCompare.refresh",
           "when": "false"
         },
         {
-          "command": "foldersCompare.chooseFoldersAndCompare",
+          "command": "vscodeCompare.chooseFoldersAndCompare",
           "when": "false"
         },
         {
-          "command": "foldersCompare.compareFoldersAgainstWorkspace",
+          "command": "vscodeCompare.compareFoldersAgainstWorkspace",
           "when": "workspaceFolderCount != 0"
         },
         {
-          "command": "foldersCompare.compareSelectedFolders",
+          "command": "vscodeCompare.compareSelectedFolders",
           "when": "false"
         },
         {
-          "command": "foldersCompare.copyToCompared",
+          "command": "vscodeCompare.copyToCompared",
           "when": "false"
         },
         {
-          "command": "foldersCompare.copyToMy",
+          "command": "vscodeCompare.copyToMy",
           "when": "false"
         },
         {
-          "command": "foldersCompare.takeMyFile",
+          "command": "vscodeCompare.takeMyFile",
           "when": "false"
         },
         {
-          "command": "foldersCompare.takeComparedFile",
+          "command": "vscodeCompare.takeComparedFile",
           "when": "false"
         },
         {
-          "command": "foldersCompare.deleteFile",
+          "command": "vscodeCompare.deleteFile",
           "when": "false"
         }
       ],
       "view/title": [
         {
-          "command": "foldersCompare.refresh",
+          "command": "vscodeCompare.refresh",
           "group": "navigation@2",
-          "when": "view == foldersCompareAppService && foldersCompareContext.hasFolders"
+          "when": "view == vscodeCompareAppService && foldersCompareContext.hasFolders"
         },
         {
-          "command": "foldersCompare.swap",
+          "command": "vscodeCompare.swap",
           "group": "navigation@1",
-          "when": "view == foldersCompareAppService && foldersCompareContext.hasFolders"
+          "when": "view == vscodeCompareAppService && foldersCompareContext.hasFolders"
         },
         {
-          "command": "foldersCompare.pickFromRecentCompares",
+          "command": "vscodeCompare.pickFromRecentCompares",
           "group": "navigation@3",
-          "when": "view == foldersCompareAppService"
+          "when": "view == vscodeCompareAppService"
         }
       ],
       "explorer/context": [
         {
-          "command": "foldersCompare.compareSelectedFolders",
+          "command": "vscodeCompare.compareSelectedFolders",
           "when": "explorerResourceIsFolder && listDoubleSelection"
         }
       ],
       "view/item/context": [
         {
-          "command": "foldersCompare.copyToCompared",
-          "when": "view == foldersCompareAppServiceOnlyA",
+          "command": "vscodeCompare.copyToCompared",
+          "when": "view == vscodeCompareAppServiceOnlyA",
           "group": "1_folderCompares_actions@1"
         },
         {
-          "command": "foldersCompare.copyToMy",
-          "when": "view == foldersCompareAppServiceOnlyB",
+          "command": "vscodeCompare.copyToMy",
+          "when": "view == vscodeCompareAppServiceOnlyB",
           "group": "1_folderCompares_actions@1"
         },
         {
-          "command": "foldersCompare.deleteFile",
-          "when": "view == foldersCompareAppServiceOnlyA || view == foldersCompareAppServiceOnlyB"
+          "command": "vscodeCompare.deleteFile",
+          "when": "view == vscodeCompareAppServiceOnlyA || view == vscodeCompareAppServiceOnlyB"
         },
         {
-          "command": "foldersCompare.takeMyFile",
-          "when": "view == foldersCompareAppService",
+          "command": "vscodeCompare.takeMyFile",
+          "when": "view == vscodeCompareAppService",
           "group": "1_folderCompares_actions@1"
         },
         {
-          "command": "foldersCompare.takeComparedFile",
-          "when": "view == foldersCompareAppService",
+          "command": "vscodeCompare.takeComparedFile",
+          "when": "view == vscodeCompareAppService",
           "group": "1_folderCompares_actions@2"
         }
       ]
@@ -245,7 +245,7 @@
     "commands": [
       {
         "title": "Compare Folders: Pick from recent compares",
-        "command": "foldersCompare.pickFromRecentCompares",
+        "command": "vscodeCompare.pickFromRecentCompares",
         "icon": {
           "dark": "resources/dark/history.svg",
           "light": "resources/light/history.svg"
@@ -253,43 +253,43 @@
       },
       {
         "title": "Compare Folders: Clear recent compares",
-        "command": "foldersCompare.clearRecentCompares"
+        "command": "vscodeCompare.clearRecentCompares"
       },
       {
         "title": "Copy to compared folder",
-        "command": "foldersCompare.copyToCompared"
+        "command": "vscodeCompare.copyToCompared"
       },
       {
         "title": "Copy to my folder",
-        "command": "foldersCompare.copyToMy"
+        "command": "vscodeCompare.copyToMy"
       },
       {
         "title": "Delete",
-        "command": "foldersCompare.deleteFile"
+        "command": "vscodeCompare.deleteFile"
       },
       {
         "title": "Take my file",
-        "command": "foldersCompare.takeMyFile"
+        "command": "vscodeCompare.takeMyFile"
       },
       {
         "title": "Take compared file",
-        "command": "foldersCompare.takeComparedFile"
+        "command": "vscodeCompare.takeComparedFile"
       },
       {
         "title": "Choose Folders And Compare",
-        "command": "foldersCompare.chooseFoldersAndCompare"
+        "command": "vscodeCompare.chooseFoldersAndCompare"
       },
       {
         "title": "Compare Folders: Compare a folder against workspace",
-        "command": "foldersCompare.compareFoldersAgainstWorkspace"
+        "command": "vscodeCompare.compareFoldersAgainstWorkspace"
       },
       {
         "title": "Compare Folders: Choose 2 folders and compare",
-        "command": "foldersCompare.compareFoldersAgainstEachOther"
+        "command": "vscodeCompare.compareFoldersAgainstEachOther"
       },
       {
         "title": "Refresh",
-        "command": "foldersCompare.refresh",
+        "command": "vscodeCompare.refresh",
         "icon": {
           "light": "resources/light/refresh.svg",
           "dark": "resources/dark/refresh.svg"
@@ -297,14 +297,14 @@
       },
       {
         "title": "Swap Sides",
-        "command": "foldersCompare.swap",
+        "command": "vscodeCompare.swap",
         "icon": {
           "light": "resources/light/swap.svg",
           "dark": "resources/dark/swap.svg"
         }
       },
       {
-        "command": "foldersCompare.compareSelectedFolders",
+        "command": "vscodeCompare.compareSelectedFolders",
         "title": "[Compare Folders] Compare selected folders"
       }
     ],
@@ -312,7 +312,7 @@
       "activitybar": [
         {
           "id": "foldersCompare",
-          "title": "Compare Folders",
+          "title": "Compare",
           "icon": "resources/icon.svg"
         }
       ]
@@ -320,21 +320,21 @@
     "views": {
       "foldersCompare": [
         {
-          "id": "foldersCompareAppService",
+          "id": "vscodeCompareAppService",
           "name": "Differences"
         },
         {
-          "id": "foldersCompareAppServiceOnlyA",
+          "id": "vscodeCompareAppServiceOnlyA",
           "name": "Only in my folder"
         },
         {
-          "id": "foldersCompareAppServiceOnlyB",
+          "id": "vscodeCompareAppServiceOnlyB",
           "name": "Only in compared folder"
         },
         {
-          "id": "foldersCompareAppServiceIdenticals",
+          "id": "vscodeCompareAppServiceIdenticals",
           "name": "Identical files",
-          "when": "config.compareFolders.showIdentical"
+          "when": "config.vscodeCompare.showIdentical"
         }
       ]
     }
